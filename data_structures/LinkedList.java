@@ -62,6 +62,43 @@ public class LinkedList<T> {
 		}
 	}
 
+	//Remove at index
+	public boolean removeAt(int index) {
+		//If head is null
+		if(head == null)
+			return false;
+		//If index is 0 --> Removing head
+		if(index == 0) {
+			head = head.next;
+			return true;
+		}
+		//If index > 0
+		//Pointer to head
+		Node ptr = head;
+		//Decrement index so that it points to an element previous to one being deleted 
+		index = index - 1;
+		//Run until index is 0
+		while(index > 0) {
+			//If the current ptr and its next pointer are not null
+			if(ptr != null && ptr.next != null) {
+				//Point to next element
+				ptr = ptr.next;
+				//Decrement index
+				index--;
+			//If either current or next pointer is null,
+			//it means that index specified is out of bound
+			} else {
+				return false;
+			}
+		}
+		//If the next pointer is not null, then assign curr pointers next to curr pointer's next next
+		if(ptr.next != null && index >= 0) {
+			ptr.next = ptr.next.next;
+			return true;
+		}
+		return false;
+	}
+
 	public void print() {
 		if(head == null) {
 			return;
