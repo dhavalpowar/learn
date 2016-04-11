@@ -1,0 +1,129 @@
+
+OBJECTIVE-C NOTES:
+
+BASICS
+	⁃	#import instead of #include
+	⁃	Compiling command:- gcc -framework Cocoa -o hello helloworld.m
+	⁃	Calling methods:- [car startEngine] or [[car fastestCar] startEngine]
+	⁃	Calling methods with labels:- [car driveToFromOrigin: 20 toDestination: 50]
+	⁃	Methods cannot be overloaded by type. But can be overloaded by labels.
+	⁃	Calling a method that does not exist does not cause a compile-time error, but a runtime exception which can be caught and handled. Use forwardInvocation:
+	⁃	Selectors are pointers to methods. They use SEL type.
+	⁃	Declaring selectors:- SEL stepOne = @selector(driveForDistance:);
+	⁃	Declaring selectors with labels:- SEL stepTwo = @selector(driveToFromOrigin:toDestination:);
+	⁃	Using selectors:- [porsche performSelector:stepOne withObject:[NSNumber numberWithDouble:5.7]];
+	⁃	DataTypes:- primitive and object types. Objects are referred only using pointer types.
+	⁃	Always use architecture-safe datatypes instead of primitive: NSInteger, NSUInteger, NSNumber, CGFloat etc..
+	⁃	NSNumber used for boxing/unboxing primitive types.
+	⁃	NSString used for strings. eg NSString *str = @“some string”;
+	⁃	UTF8String to convert NSString to a char*
+	⁃	BOOL for boolean types: values are YES and NO.
+	⁃	Dynamic typing: There’s a generic type called id which basically means “any object”. Invalid references or invalid method handling called on this reference will be handled at runtime.
+	⁃	Null is called nil. You can call methods on it which will also return nil. So no nullPointerExceptions.
+	⁃	For pointers to classes, nil is written in uppercase (Nil). Don’t ask me why
+	⁃	NSNull is a wrapper for nil.
+	⁃	All objects have a method description (similar to Java’s toString()).
+	⁃	Built-in mutable Object types: NSMutableString, NSMutableArray.
+
+CLASS INTERFACES
+	⁃	Class interfaces (*.h) declaration are enclosed in @interface … @end
+	⁃	   @interface MyClass: NSObject {  // <-- NSObject is the superclass
+	⁃	       // now, a list of instance variables:
+	⁃	       int foo;
+	⁃	       ...
+	⁃	       }
+	⁃	
+	⁃	       // and now - a list of methods:
+	⁃	       - (void) print;
+	⁃	       - (void) setValue: (int) v;
+	⁃	       - (void) setValue: (int) v andAnother: (int) a;
+	⁃	       - (int) value;
+	⁃	       - foo;
+	⁃	       + (int) numberOfInstances;
+	⁃	       + (void) initialize;  // class initializer
+	⁃	 
+	⁃	       @end
+	⁃	Methods with - sign are instance methods. Methods with + sign are class (static) methods.
+	⁃	Methods are always public.
+	⁃	You can simulate private methods by not adding their signatures to the @interface, writing only implementations in @implementation
+	⁃	There is only single inheritance like Java.
+	⁃	If return type is not mentioned(like in method foo above), the default type is id
+	⁃	@property declaration of variables inside @interface automatically creates getters and setters for eg. @property int age; declares a getter (int) age; and a setter (void) setAge: (int) age;
+	⁃	Properties can have additional options inside parentheses after the @property keyword. For eg. 
+	⁃	         @property (readonly) int age; ensures a setter is not provided.
+	⁃	         @property (getter=getTheAge) int age; sets a different method as getter.
+	⁃	         @property (weak) int age; ensures a weak relationship for this property, which means, if an instance
+	⁃	                 of the enclosing class has a reference to this weak property’s instance and if this weak instance
+	⁃	                 is destroyed, it will silently set it to nil avoiding memory leaks (that can be caused by strong
+	⁃	                 refs)
+	⁃	Properties can also be accessed using dot notation eg. person.age.
+	⁃	If a class has an initialize method, it is called ONCE when the class is used for the first time. Like static constructors in Java.
+	⁃	Another keyword used in interface declarations, @class, is used for forward declarations, like in C++. If you need to mention one class in the interface of another, to reduce coupling between classes you can declare it with @class Klass instead of #import <klass.h>.
+	⁃	Exceptions:- programmer level bugs. Try to use them less. Uses @try, @catch, @finally. Built-in NSException class. Contains name, reason, userInfo properties. Create new NSExceptions with exceptionWithName:reason:userInfo
+	⁃	Errors: are expected problems. NSError class has properties
+	⁃	     1. domain: Used to organize errors into a hierarchy.
+	⁃	     2. code: NSInteger representing ID of an error, should be unique in the same domain.
+	⁃	     3. userInfo: NSDictionary similar to the one in NSException.
+	⁃	Failing functions may accept an additional argument (typically error). If the operation fails it returns nil OR NO.
+	⁃	Many methods are configured to obtain an indirect reference (pointer to pointer) to an NSError object. Hence error variable is passed to the method using the reference (&) operator.
+	⁃	You should only try to access the NSError reference if the method directly returns nil, and you should never use the presence of an NSError object to indicate success or failure.
+	⁃	For information on new Obj-C features such as instancetype etc. read link #3 in sources.
+
+CLASSES
+	⁃	Implementations of @interface are class implementations (*.m) enclosed in @implementation … @end
+	⁃	     @implementation MyClass
+	⁃	 
+	⁃	- (void) setValue: (int) v {
+	⁃	  ...
+	⁃	}
+	⁃	 
+	⁃	@end
+	⁃	Variable declarations don’t have plus/minus signs in front of them.
+	⁃	if you want to have a static variable in a class, declare it using the C keyword static in the header file, outside the @interface block (e.g. static int instances;).
+	⁃	Instance variables are accessed using the arrow operator ->, e.g. person->name
+	⁃	Variable access is set using the keywords @public, @private, and @protected;  Used in C++ style ie. put before a group of variables.
+	⁃	Use @synthesize age; To generate implementations for @property (declared in class - not needed anymore). As of the middle of 2013, LLVM defaults to synthesizing accessors for properties, so in most cases you no longer need to specify @synthesize at all. The one case where you would still use it is when you want to back the property with a different instance variable than the one that the compiler would generate for you. Also, the default name for the ivar that backs a property will be the property name prefixed with an underscore.
+	⁃	In ObjC, apart from inheriting from classes, you can also add code to existing classes using categories. Even for built-in classes. This can be used to split long classes into different files. This is how its done.
+     You declare an @interface like the one below and then you include both the old header and the new header in
+     the implementation file, and voila – you have a class with new methods added.
+	⁃	                                   @interface ExistingClass (SomeNewName)
+	⁃	                ...methods...
+	⁃	          @end
+
+OBJECTS
+	⁃	Inside object methods, reference to the object is called self.
+	⁃	To call the super class’s implementation use the super reference. for eg. [super foo]
+	⁃	Objects are created in two-phase. First you call alloc and then init. For eg.
+	⁃	      Car *car = [[Car alloc] init];
+	⁃	For multi-constructor variants:
+      - (ClassName*) initWithParam: (int) one andAnother: (int) two {
+          // first, call any initializations defined in superclass
+         self = [super init];
+ 
+         if (self) {  // self could be nil if something went wrong
+         // ... set some instance variables and stuff
+         }
+ 
+         return self;  // won't work without this
+       }
+
+      And then use it like this:
+	ClassName* var = [[ClassName alloc] initWithParam: 5 andAnother: 6];
+
+PROTOCOLS
+	⁃	Are like Java interfaces.
+	⁃	     @protocol FooInterface
+	⁃	- (int) foo;
+	⁃	- (void) bar;
+	⁃	@end
+	⁃	To mark a class as implementing an interface, add the interface name in triangle brackets:
+     @interface MyClass: NSObject <Printable, FooInterface>
+	⁃	The methods declared in the implemented protocol don’t need to be listed inside the @interface declaration.
+
+Sources:
+
+	⁃	Obj-C in 30 minutes cheatsheet. http://mackuba.eu/2008/10/05/learn-objective-c-in-30-minutes/
+	⁃	RyPress Tutorials http://rypress.com/tutorials/objective-c
+	⁃	New Objective C features - https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW2
+	⁃	Apple docs - Objective C - https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+	⁃	Objective C style Guide - https://google.github.io/styleguide/objcguide.xml#Example
