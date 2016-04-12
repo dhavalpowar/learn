@@ -1,0 +1,589 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Monaco;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fmodern\fcharset0 CourierNewPS-BoldMT;\f4\fmodern\fcharset0 CourierNewPSMT;\f5\fnil\fcharset0 Georgia;
+\f6\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red44\green44\blue44;\red255\green255\blue255;
+\red240\green240\blue234;\red10\green82\blue135;\red244\green246\blue246;\red9\green78\blue192;\red0\green0\blue0;
+\red85\green136\blue135;\red109\green109\blue109;\red30\green20\blue146;\red251\green251\blue251;\red29\green29\blue29;
+\red234\green234\blue234;\red18\green139\blue2;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid201\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid301\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid401\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid501\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid601\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid701\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\margl1440\margr1440\vieww16680\viewh23680\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+OBJECTIVE-C NOTES:\
+\
+BASICS\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #import
+\f0\b0  instead of 
+\f2\b #include
+\f0\b0 \
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Compiling command:- 
+\f2\b gcc -framework Cocoa -o hello helloworld.m
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Calling methods:- 
+\f2\b [car startEngine]
+\f0\b0  or 
+\f2\b [[car fastestCar] startEngine]
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Calling methods with labels:- 
+\f2\b [car driveToFromOrigin: 20 toDestination: 50]
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Methods cannot be overloaded by type. But can be overloaded by labels.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Calling a method that does not exist does not cause a compile-time error, but a runtime exception which can be caught and handled. Use forwardInvocation:\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Selectors are pointers to methods. They use SEL type.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Declaring selectors:- 
+\f2\b SEL stepOne = @selector(driveForDistance:);\
+{\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 Declaring selectors with labels:-
+\f2\b  SEL stepTwo = @selector(driveToFromOrigin:toDestination:);
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Using selectors:- 
+\f2\b [porsche performSelector:stepOne withObject:[NSNumber numberWithDouble:5.7]];\
+\ls1\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}DataTypes:- primitive and object types. Objects are referred only using pointer types.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Always use architecture-safe datatypes instead of primitive: 
+\f2\b NSInteger, NSUInteger, NSNumber, CGFloat
+\f0\b0  etc..\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b NSNumber
+\f0\b0  used for boxing/unboxing primitive types.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b NSString
+\f0\b0  used for strings. eg 
+\f2\b NSString *str = @\'93some string\'94;
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b UTF8String
+\f0\b0  to convert NSString to a char*\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b BOOL
+\f0\b0  for boolean types: values are YES and NO.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Dynamic typing: There\'92s a generic type called 
+\f2\b id
+\f0\b0  which basically means \'93any object\'94. Invalid references or invalid method handling called on this reference will be handled at runtime.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Null is called 
+\f2\b nil. 
+\f0\b0 You can call methods on it which will also return nil. So no nullPointerExceptions.
+\f2\b \
+\ls1\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 For pointers to classes, nil is written in uppercase 
+\f2\b (\cf2 \cb5 \strokec2 Nil\cf3 \cb4 \strokec3 )
+\f0\b0 . Don\'92t ask me why\
+\ls1\ilvl0\cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f2\b NSNull
+\f0\b0  is a wrapper for 
+\f2\b nil
+\f0\b0 .\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}All objects have a method 
+\f2\b description
+\f0\b0  (similar to Java\'92s toString()).\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Built-in mutable Object types: 
+\f2\b NSMutableString
+\f0\b0 , 
+\f2\b NSMutableArray
+\f0\b0 .\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+CLASS INTERFACES\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 	
+\f1 \uc0\u8259 
+\f0 	Class interfaces (*.h) declaration are enclosed in 
+\f2\b @interface \'85 @end\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 {\listtext	
+\f1\b0 \uc0\u8259 
+\f3\b 	}   @interface
+\f4\b0 \cf3 \strokec3  \cf8 \strokec8 MyClass\cf9 \strokec9 : \cf8 \strokec8 NSObject\cf3 \strokec3  \cf9 \strokec9 \{\'a0 \cf10 \strokec10 // <-- NSObject is the superclass\cf3 \strokec3 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10        // now, a list of instance variables:\cf3 \strokec3 \
+\pard\pardeftab720\sl316\partightenfactor0
+\ls2\ilvl0\cf11 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11        int\cf3 \strokec3  \cf9 \strokec9 foo;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        ...\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        \}\cf3 \strokec3 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\ls2\ilvl0\cf10 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10        // and now - a list of methods:\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        - (\cf11 \strokec11 void\cf9 \strokec9 ) print;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        - (\cf11 \strokec11 void\cf9 \strokec9 ) \cf12 \strokec12 setValue\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) v;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        - (\cf11 \strokec11 void\cf9 \strokec9 ) \cf12 \strokec12 setValue\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) v \cf12 \strokec12 andAnother\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) a;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        - (\cf11 \strokec11 int\cf9 \strokec9 ) value;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        - foo;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        + (\cf11 \strokec11 int\cf9 \strokec9 ) numberOfInstances;\cf3 \strokec3 \
+\ls2\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9        + (\cf11 \strokec11 void\cf9 \strokec9 ) initialize;\'a0 \cf10 \strokec10 // class initializer\cf3 \strokec3 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \'a0\
+\ls2\ilvl0
+\f3\b \cf6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f3\b 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6        @end
+\f4\b0 \cf3 \strokec3 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Methods with - sign are instance methods. Methods with + sign are class (static) methods.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Methods are always public.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}\cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 You can simulate private methods by not adding their signatures to the @interface, writing only implementations in @implementation\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}There is only single inheritance like Java.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}If return type is not mentioned(like in method foo above), the default type is 
+\f2\b id\
+{\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}@property
+\f0\b0  declaration of variables inside 
+\f2\b @interface
+\f0\b0  automatically creates getters and setters\uc0\u8232 for eg. 
+\f2\b @property int age;
+\f0\b0  declares a getter 
+\f2\b (int) age;
+\f0\b0  and a setter 
+\f2\b (void) setAge: (int) age;\
+{\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 Properties can have additional options inside parentheses after the @property keyword. For eg. \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}         
+\f2\b @property (readonly) int age; 
+\f0\b0 ensures a setter is not provided.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}         
+\f2\b @property (getter=getTheAge) int age; 
+\f0\b0 sets a different method as getter.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}         
+\f2\b @property (weak) int age;
+\f0\b0  ensures a weak relationship for this property, which means, if an instance\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}                 of the enclosing class has a reference to this weak property\'92s instance and if this weak instance\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}                 is destroyed, it will silently set it to nil avoiding memory leaks (that can be caused by strong\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}                 refs)\
+\ls2\ilvl0
+\f2\b {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}Properties 
+\f0\b0 can also be accessed using dot notation eg. 
+\f2\b person.age.\
+\ls2\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}If a class has an 
+\f2\b initialize
+\f0\b0  method, it is called ONCE when the class is used for the first time. Like static constructors in Java.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Another keyword used in interface declarations, 
+\f2\b @class
+\f0\b0 , is used for forward declarations, like in C++. If you need to mention one class in the interface of another, to reduce coupling between classes you can declare it with 
+\f2\b @class Klass
+\f0\b0  instead of #import <klass.h>.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Exceptions:- programmer level bugs. Try to use them less. Uses 
+\f2\b @try, @catch, @finally. 
+\f0\b0 Built-in 
+\f2\b NSException 
+\f0\b0 class. Contains 
+\f2\b name, reason, userInfo 
+\f0\b0 properties. Create new NSExceptions with 
+\f2\b exceptionWithName:reason:userInfo
+\f0\b0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Errors: are expected problems. 
+\f2\b NSError 
+\f0\b0 class has properties\
+\ls2\ilvl0
+\f2\b {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}     
+\f0\b0 1.
+\f2\b  domain: 
+\f0\b0 Used to organize errors into a hierarchy.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}     2. 
+\f2\b code:
+\f0\b0  NSInteger representing ID of an error, should be unique in the same domain.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}     3. userInfo: NSDictionary similar to the one in 
+\f2\b NSException.\
+\ls2\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Failing functions may accept an additional argument (typically error). If the operation fails it returns nil OR NO.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Many methods are configured to obtain an indirect reference (pointer to pointer) to an NSError object. Hence error variable is passed to the method using the reference (&) operator.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}\cf9 \cb13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 You should only try to access the NSError reference if the method directly returns nil, and you should never use the presence of an NSError object to indicate success or failure.\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}For information on new Obj-C features such as 
+\f2\b instancetype
+\f0\b0  etc. read link #3 in sources.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+CLASSES\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Implementations of 
+\f2\b @interface
+\f0\b0  are class implementations (*.m) enclosed in 
+\f2\b @implementation
+\f0\b0  \'85 
+\f2\b @end\
+{\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}     
+\f3\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @implementation
+\f4\b0 \cf3 \strokec3  \cf8 \strokec8 MyClass\cf3 \strokec3 \
+\pard\pardeftab720\sl316\partightenfactor0
+\ls3\ilvl0\cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \'a0\
+\ls3\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 - (\cf11 \strokec11 void\cf9 \strokec9 ) \cf12 \strokec12 setValue\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) v \{\cf3 \strokec3 \
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'a0\'a0\cf9 \strokec9 ...\cf3 \strokec3 \
+\ls3\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \}\cf3 \strokec3 \
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \'a0\
+\ls3\ilvl0
+\f3\b \cf6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f3\b 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @end
+\f4\b0 \cf3 \strokec3 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls3\ilvl0
+\f2\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 \cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Variable declarations don\'92t have plus/minus signs in front of them.\
+\ls3\ilvl0
+\f2\b \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 \cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 if you want to have a static variable in a class, declare it using the C keyword 
+\f2\b \cf2 \cb5 \strokec2 static
+\f0\b0 \cf3 \cb4 \strokec3  in the header file, outside the 
+\f2\b @interface
+\f0\b0  block (e.g. 
+\f2\b \cf2 \cb5 \strokec2 static int instances;
+\f0\b0 \cf3 \cb4 \strokec3 ).\
+\ls3\ilvl0
+\f2\b \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 \cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Instance variables are accessed using the arrow operator \cf2 \cb5 \strokec2 ->\cf3 \cb4 \strokec3 , e.g. 
+\f2\b \cf2 \cb5 \strokec2 person->name\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\ls3\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Variable access is set using the keywords \cf2 \cb5 \strokec2 @public\cf3 \cb4 \strokec3 , \cf2 \cb5 \strokec2 @private\cf3 \cb4 \strokec3 , and \cf2 \cb5 \strokec2 @protected\cf3 \cb4 \strokec3 ;  Used in C++ style ie. put before a group of variables.\
+\ls3\ilvl0\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Use 
+\f2\b @synthesize age;
+\f0\b0  To generate implementations for 
+\f2\b @property 
+\f0\b0 (declared in class - not needed anymore). \cf14 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 As of the middle of 2013, LLVM defaults to synthesizing accessors for properties, so in most cases you no longer need to specify \cb15 @synthesize\cb4  at all. The one case where you would still use it is when you want to back the property with a different instance variable than the one that the compiler would generate for you. Also, the default name for the ivar that backs a property will be the property name prefixed with an underscore.\
+\ls3\ilvl0\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}
+\f5\fs28 \cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 I
+\f0\fs24 n ObjC, apart from inheriting from classes, you can also add code to existing classes using categories. Even for built-in classes. This can be used to split long classes into different files. This is how its done.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf3      You declare an 
+\f2\b @interface
+\f0\b0  like the one below and then you include both the old header and the new header in\
+     the implementation file, and voila \'96 you have a class with new methods added.\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\f5\fs28 \cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f6 \uc0\u8259 
+\f5 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3                                    
+\f3\b \cf6 \cb7 \strokec6 @interface
+\f4\b0 \cf3 \strokec3  \cf8 \strokec8 ExistingClass\cf3 \strokec3  \cf9 \strokec9 (\cf8 \strokec8 SomeNewName\cf9 \strokec9 )\cf3 \strokec3 \
+\pard\pardeftab720\sl316\partightenfactor0
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}              \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'a0\'a0\cf9 \strokec9 ...methods...\cf3 \strokec3 \
+\ls4\ilvl0
+\f3\b \cf6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f3\b 	}          \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @end
+\f0\b0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+OBJECTS\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls5\ilvl0\cf0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Inside object methods, reference to the object is called 
+\f2\b self
+\f0\b0 .\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}To call the super class\'92s implementation use the super reference. for eg. 
+\f2\b [super foo]\
+\ls5\ilvl0
+\f0\b0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Objects are created in two-phase. First you call 
+\f2\b alloc
+\f0\b0  and then 
+\f2\b init. 
+\f0\b0 For eg.\
+\ls5\ilvl0
+\f2\b {\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}      Car *car = [[Car alloc] init];\
+{\listtext	
+\f1\b0 \uc0\u8259 
+\f2\b 	}
+\f0\b0 For multi-constructor variants:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0       
+\f4\b0\fs28 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 - (\cf8 \strokec8 ClassName\cf9 \strokec9 *) \cf12 \strokec12 initWithParam\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) one \cf12 \strokec12 andAnother\cf9 \strokec9 : (\cf11 \strokec11 int\cf9 \strokec9 ) two \{\cf3 \strokec3 \
+\pard\pardeftab720\sl316\partightenfactor0
+\cf2 \strokec2 \'a0\'a0        \cf10 \strokec10 // first, call any initializations defined in superclass\cf3 \strokec3 \
+\cf2 \strokec2 \'a0\'a0       
+\f3\b \cf6 \strokec6 self
+\f4\b0 \cf3 \strokec3  \cf9 \strokec9 = [
+\f3\b \cf6 \strokec6 super
+\f4\b0 \cf3 \strokec3  \cf12 \strokec12 init\cf9 \strokec9 ];\cf3 \strokec3 \
+\'a0\
+\cf2 \strokec2 \'a0\'a0       
+\f3\b \cf6 \strokec6 if
+\f4\b0 \cf3 \strokec3  \cf9 \strokec9 (
+\f3\b \cf6 \strokec6 self
+\f4\b0 \cf9 \strokec9 ) \{\'a0 \cf10 \strokec10 // self could be nil if something went wrong\cf3 \strokec3 \
+\cf2 \strokec2 \'a0\'a0\'a0\'a0     \cf10 \strokec10 // ... set some instance variables and stuff\cf3 \strokec3 \
+\cf2 \strokec2 \'a0\'a0       \cf9 \strokec9 \}\cf3 \strokec3 \
+\'a0\
+\cf2 \strokec2 \'a0\'a0       
+\f3\b \cf6 \strokec6 return
+\f4\b0 \cf3 \strokec3  
+\f3\b \cf6 \strokec6 self
+\f4\b0 \cf9 \strokec9 ;\'a0 \cf10 \strokec10 // won't work without this\cf3 \strokec3 \
+\cf9 \strokec9        \}\cf3 \strokec3 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+
+\f2\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+      
+\f0\b0 And then use it like this:\
+	
+\f2\b \cf8 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 ClassName\cf9 \strokec9 * var = [[\cf8 \strokec8 ClassName\cf3 \strokec3  \cf12 \strokec12 alloc\cf9 \strokec9 ] \cf12 \strokec12 initWithParam\cf9 \strokec9 : \cf16 \strokec16 5\cf3 \strokec3  \cf12 \strokec12 andAnother\cf9 \strokec9 : \cf16 \strokec16 6\cf9 \strokec9 ];\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+PROTOCOLS\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls6\ilvl0\cf0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Are like Java interfaces.\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}     
+\f3\b\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @protocol
+\f4\b0 \cf3 \strokec3  \cf8 \strokec8 FooInterface\cf3 \strokec3 \
+\pard\pardeftab720\sl316\partightenfactor0
+\ls6\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 - (\cf11 \strokec11 int\cf9 \strokec9 ) foo;\cf3 \strokec3 \
+\ls6\ilvl0\cf9 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f4 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 - (\cf11 \strokec11 void\cf9 \strokec9 ) bar;\cf3 \strokec3 \
+\ls6\ilvl0
+\f3\b \cf6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1\b0 \uc0\u8259 
+\f3\b 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @end
+\f4\b0 \cf3 \strokec3 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls6\ilvl0
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 To mark a class as implementing an interface, add the interface name in triangle brackets:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0      
+\f2\b \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 @interface
+\f0\b0 \cf3 \strokec3  \cf8 \strokec8 MyClass\cf9 \strokec9 : \cf8 \strokec8 NSObject\cf3 \strokec3  \cf9 \strokec9 <\cf8 \strokec8 Printable\cf9 \strokec9 , \cf8 \strokec8 FooInterface\cf9 \strokec9 >\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls7\ilvl0\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}The methods declared in the implemented protocol don\'92t need to be listed inside the @interface declaration.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl336\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+Sources:\
+\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sl336\slmult1\pardirnatural\partightenfactor0
+\ls8\ilvl0\cf0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Obj-C in 30 minutes cheatsheet. {\field{\*\fldinst{HYPERLINK "http://mackuba.eu/2008/10/05/learn-objective-c-in-30-minutes/"}}{\fldrslt http://mackuba.eu/2008/10/05/learn-objective-c-in-30-minutes/}}\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}RyPress Tutorials {\field{\*\fldinst{HYPERLINK "http://rypress.com/tutorials/objective-c"}}{\fldrslt http://rypress.com/tutorials/objective-c}}\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}New Objective C features - {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW2"}}{\fldrslt https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW2}}\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Apple docs - Objective C - {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html"}}{\fldrslt https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html}}\
+{\listtext	
+\f1 \uc0\u8259 
+\f0 	}Objective C style Guide - {\field{\*\fldinst{HYPERLINK "https://google.github.io/styleguide/objcguide.xml#Example"}}{\fldrslt https://google.github.io/styleguide/objcguide.xml#Example}}\
+}
