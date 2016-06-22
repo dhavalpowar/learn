@@ -1,0 +1,342 @@
+1 - Block Scoping with let
+			var es = [];
+			for (var i = 0; i < 10; i++) {
+			  let c = i;
+			  es[i] = function () {
+			    console.log("Upcoming edition of ECMAScript is ES" + c);
+			  };
+			}
+			es[6](); // Upcoming edition of ECMAScript is ES6
+
+2 - Block Scoping with const
+			Const behaves like let but values are readonly
+
+3 - Classes
+			class Language {
+			  constructor(name, founder, year) {
+			    this.name = name;
+			    this.founder = founder;
+			    this.year = year;
+			  }
+			  summary() {
+			    return this.name + " was created by " + this.founder + " in " + this.year;
+			  }
+			}
+
+			var l = new Language('a', 'b', 'c');
+			var m = new Language;
+			m.name = 'f';
+
+			class MetaLanguage extends Language {
+			  constructor(x, y, z, version) {
+			    super(x, y, z);
+			    this.version = version;
+			  }
+			}
+
+			//SUBLCLASSES
+			class Employee extends Person {
+			    constructor(name, title) {
+			        super(name);
+			        this.title = title;
+			    }
+			    describe() {
+			        return super.describe() + ' (' + this.title + ')';
+			    }
+			}
+
+4 - Default/Named Function Parameters
+
+			function history(lang = "C", year = 1972) {
+			  return lang + " was created around the year " + year;
+		  	}
+
+5 - Collections
+			In ES6, the key can be any JavaScript data type and not just strings. That's the interesting part!
+			
+			Sets - constructor, add, has, delete
+			Maps - constructor, get, set, has, delete
+
+
+6 - Destructuring
+			Array destructuring - With array destructing, we can initialize variables at once, or even swap them instead of having the conventional way of creating a var temp; temporary variable.
+
+			const [, year, month, day] =
+						    /^(\d\d\d\d)-(\d\d)-(\d\d)$/
+						    .exec('2999-12-31');
+
+			var [ start, end ] = ["earth", "moon"] // initialize
+			console.log(start + " calling " + end); // earth calling moon
+			 
+			[start, end] = [end, start] // variable swapping
+			console.log(start + " calling " + end); // moon calling earth
+
+			function equinox() {
+			  return [20, "March", 2013, 11, 02];
+			}
+			var [date, month, , ,] = equinox();
+
+			Object destructuring -  variables can also be initialized from an object that is returned from a function even with deeply nested objects.
+
+			function equinox2() {
+			  return {
+			    date: 20,
+			    month: "March",
+			    year: 2013,
+			    time: {
+			      hour: 11, // nested
+			      minute: 2
+			    }
+			  };
+			}
+			 
+			var { date: d, month: m, time : { hour: h} } = equinox2();
+			// h has the value of the nested property while "year" and "minute" are skipped totally
+
+7 - Rest Parameters and Spread Operators
+		REST PARAMS - are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly;
+
+			function push(array, ...items) { // defining rest parameters with 3 dot syntax
+			  items.forEach(function(item) {
+			    array.push(item);
+			    console.log( item );
+			  });
+
+		SPREAD PARAMS - allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) or multiple variables  (for destructuring assignment) are expected. turn arrays into parameters and vice versa
+				Math.max(...[-1, 5, 11, 3]) // instead of Math.max.apply(null, [-1, 5, 11, 3])
+				arr1.push(...arr2);
+				console.log([...arr1, ...arr2, ...arr3]); // concat arrays
+				[...iterableObj, 4, 5, 6] //For array literals 
+				[a, b, ...iterableObj] = [1, 2, 3, 4, 5];   //For destructuring
+
+		SPREAD vs REST
+
+		var [a,b, ...others] = [1,2,3,4,5];    // in an assignment/declaration context, `...` is "gather"
+		a; // 1
+		b; // 2
+		others; // [3,4,5]
+
+		var x = [ ...others, a, b ];   // in an expressino/value context, `...` is "spread"
+		x; // [3,4,5,1,2]
+
+8 - Iterators
+			var planets = ["Mercury", "Venus", "Earth", "Mars"];
+			for (p of planets) {
+			  console.log(p); // Mercury, Venus, Earth, Mars
+			}
+
+			var engines = Set(["Gecko", "Trident", "Webkit", "Webkit"]);
+			for (var e of engines) {
+			    console.log(e);
+			    // Set only has unique values, hence Webkit shows only once
+			}
+			 
+			var es6 = new Map();
+			es6.set("edition", 6);
+			es6.set("committee", "TC39");
+			es6.set("standard", "ECMA-262");
+			for (var [name, value] of es6) {
+			  console.log(name + ": " + value);
+			}
+
+
+9 - Array Comprehension
+
+			// Array created with 1 loop
+			var temperature = [0, 37, 100];
+			[t + 273 for (t of temperature)]; // [273, 310, 373]
+			 
+			// Array created with 3 loops
+			var suspects = ["Miss Scarlet", "Colonel Mustard"],
+			  weapons = ["Candlestick", "Dagger"],
+			  rooms = ["Kitchen", "Ballroom"];
+			 
+			[(console.log(s + " with a " + w + " in the " + r)) for (s of suspects) for (w of weapons) for (r of rooms)];
+
+10 - Modules
+			-------- circle.js -------------
+			export function area(radius) {
+			  return Math.PI * radius * radius;
+			}
+			 
+			export function circumference(radius) {
+			  return 2 * Math.PI * radius;
+			}
+
+			------- main.js ----------------
+			import { area, circumference } from 'circle';
+ 
+			console.log("Area of the circle: " + area(4) + " meter squared");
+			console.log("Circumference of the circle: " + circumference(14) + " meters");
+
+11 - Iterators - In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. This method returns an object with two properties: done and value. By default, arrays, maps, sets are iterable. In order to be iterable, an object must implement the @@iterator method, meaning that the object (or one of the objects up its prototype chain) must have a property with a Symbol.iterator key:
+			var myIterable = {}
+			myIterable[Symbol.iterator] = function* () {
+			    yield 1;
+			    yield 2;
+			    yield 3;
+			};
+			[...myIterable] // [1, 2, 3]
+	
+12 - String interpolation
+			function printCoord(x, y) {
+			    console.log(`(${x}, ${y})`);
+			}
+
+12 - Multi-line strings
+			const HTML5_SKELETON = `
+			    <!doctype html>
+			    <html>
+			    <head>
+			        <meta charset="UTF-8">
+			        <title></title>
+			    </head>
+			    <body>
+			    </body>
+			    </html>`;
+
+13 - Arrow functions to avoid shadowing this ie. no more need to do var that = this;
+
+			function UiComponent() {
+			    var button = document.getElementById('myButton');
+			    button.addEventListener('click', () => {
+			        console.log('CLICK');
+			        this.handleClick(); // (A)
+			    });
+			}
+
+	Arrow functions handy for short callbacks
+
+			const arr = [1, 2, 3];
+			const squares = arr.map(x => x * x);
+
+	When defining parameters, you can even omit parentheses if the parameters are just a single identifier. Thus: 
+			(x) => x * x and x => x * x are both allowed.
+
+
+14 - for..of - Iterables only. Hence not OBJECTS. break and continue work inside for-of loops. Loop over [key, value] of  a map
+
+			const arr = ['a', 'b'];
+			for (const [index, element] of arr.entries()) {
+				if(index == 1) break;
+			    console.log(`${index}. ${element}`);
+			}
+
+			// Array-like, but not iterable!
+			const arrayLike = { length: 2, 0: 'a', 1: 'b' };
+
+			for (const x of arrayLike) { // TypeError
+			    console.log(x);
+			}
+
+			for (const x of Array.from(arrayLike)) { // OK
+			    console.log(x);
+			}
+
+
+			const arr = [];
+			for (const elem of [0, 1, 2]) {
+			    arr.push(() => elem); // save `elem` for later
+			}
+			console.log(arr.map(f => f())); // [0, 1, 2]
+
+			// `elem` only exists inside the loop:
+			console.log(elem); // ReferenceError: elem is not defined
+			//A let declaration works the same way as a const declaration (but the bindings are mutable).
+
+			//Iterating with existing variables, object properties and Array elements
+			const obj = {};
+			for (obj.prop of ['a', 'b']) {
+			    console.log(obj.prop);
+			}
+
+15 - Methods in object literals as:
+
+			const obj = {
+			    foo() {
+			        ···
+			    },
+			    bar() {
+			        this.foo();
+			    },
+			}
+
+16 - New String Methods
+
+			From indexOf to startsWith, endsWith:
+
+			if (str.indexOf('x') === 0) {} // ES5
+			if (str.startsWith('x')) {} // ES6
+			if (str.endsWith('x')) {}; // ES6
+			if (str.includes('x')) {} // ES6
+			'#'.repeat(3) // ES6
+
+17 - New Array methods
+			//Array.prototype.indexOf to Array.prototype.findIndex
+			//The latter can be used to find NaN, which the former can’t detect:
+
+			const arr = ['a', NaN];
+			console.log(arr.indexOf(NaN)); // -1
+			console.log(arr.findIndex(x => Number.isNaN(x))); // 1
+
+
+			//From Array.prototype.slice() to Array.from()
+			var arr1 = Array.prototype.slice.call(arguments); // ES5
+			const arr2 = Array.from(arguments); // ES6
+
+			//From apply() to Array.prototype.fill()
+			const arr2 = new Array(2).fill(undefined);
+		    // [undefined, undefined]
+
+18 - 'export default new' allows us to create classes that are exposed as singletons to the rest of the app.
+
+
+
+
+
+
+
+----------------------
+Languages
+		- JS in ES5
+		- JS in ES6
+		- Typescript. Statically typed transpiled to javascript.
+		
+Language formats
+		- ES5
+		- ES6
+		- Typescript
+
+Javascript module formats, bundlers, loaders:
+
+		- Module Formats: Way of creating modules in JS (using import, export, require, etc). Previously the concepts of modules was achieved by splitting code into seperate fiels and loading them via <script> tags. <script> tags block the page loading; a page can only render itself once all the JS scripts have been loaded (old school). Hence new module formats were created that could benefit this process. New loaders (systemJS) have been created that allow you these different types of modules.
+			eg. CommonJS: RequireJS implements CommonJS module format.
+				AMD:
+				ES6: 
+
+		- Loaders: Are tools that help you load multiple scripts efficiently (asynchronously). Old school way of loading scripts in browser was the script tag. Now we have loaders that help with this efficient process. Loaders usually take in a file names or an array of file names and load them asyncronously. Since each dependency (file) is loaded asynchronously, there is no gaurantee that they are loaded before you want to run your main script. To overcome this, usually, script loaders accept a function that can be loaded after all dependencies are resolved.
+			eg. SystemJS - Universal Dynamic module loader - loads ES6, 
+				RequireJS,
+				LazyLoad.js
+
+		- Bundlers: Bundlers bundle up files along with all its dependencies. They support one or more module formats.
+			eg. JSPM, Webpack, Browserify etc.
+		- NodeJS has support for CommonJS module format.
+		- TypeScript added support for ES6 module format in version 1.5
+
+Javascript ES6 to ES5 transpilers & compilers
+		- Babel and Traceur transpile from ES6 to ES5
+		- Typescript is a language that introduces static types in JS and compiles to ES6 or ES5.
+
+
+----------------------
+A good blend of the following is needed to write projects/libraries in javascript
+		- Language format - ES6, ES5 or Typescript
+		- Transpiler or Compiler
+		- Module bundler - JSPM, webpack, browserify
+		- Loader - SystemJS, RequireJS, etc..
+		- Minifier
+
+Good blends
+		- For Angular 2.0 - ES6, Babel, JSPM, SystemJS, Grunt
+		- For React - ES6, *, Webpack, Grunt

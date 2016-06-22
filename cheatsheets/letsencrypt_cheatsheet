@@ -1,0 +1,45 @@
+#Explain how Lets encrypt works
+
+- Install lets encrypt sudo apt-get install letsencrypt
+- Workflow:
+		lets-encrypt will generate a pair of RSA private key/public key and contact the CA with your public key.
+
+		The CA will register your public key
+
+		The program will then ask the CA to verify your domain.
+
+		The CA will answer with a set of challenges. These are some tasks you can complete to prove to the CA you own that domain. One of the common one is to upload a certain file at a certain address of that domain.
+
+		The program you installed will then do that for you and poll the CA for a confirmation
+
+		The CA will tell you "OK man, all is good".
+
+		The program will then generate another long term pair of private key/public key, generate a CSR (Certificate Signing Request) with the new public key and send that CSR to the CA.
+
+		The CA will extract the information, create a beautiful x509 certificate, sign it and send it back to you.
+
+		lets-encrypt will install the certificate on your server and set certain options (or not) to force https
+- But how does it really work?
+So! The lets-encrypt program you run on your server is open sourced here: https://github.com/letsencrypt/lets-encrypt-preview. It is called lets-encrypt-preview I guess because it isn't done yet. It's written in Python and has to be run in sudo so that it can do most of the work for you. Note that it will install the certificates on your server only if you are using Apache or Nginx. Also, the address of the CA is hardcoded in the program so be sure to use the official lets-encrypt.
+
+The program installed on the CA is also open sourced! So that anyone can publicly review and audit the code. It's called Boulder and it's here: https://github.com/letsencrypt/boulder and written in Go.
+
+Lets-encrypt and Boulder both use the protocol ACME for Automated Certificate Management Environment specified here as a draft: https://letsencrypt.github.io/acme-spec/
+
+How did I configure my letsencrypt SSL certificates:
+I have letsencrypt checked out from github and I have set it up to work just fine.
+I have a single server which has an NGINX reverse proxy in the front that serves two domains (and their applications).
+For each of the domains:
+1. I created the following path directories "/.well-known/acme-challenge" somewhere in my fielsystem (/var/ww..). Letsencrypt uses this path to serve the challenge.
+2. Then, in nginx.conf, for this server, I created a location block which routes to the above location for storing challenge files.
+3. Then I invoke the letsencrypt command with the webroot plugin, the webroot path and the domain names for the same.
+4. My certificates are then stored.
+5. I change nginx configuration to listen on port 443 and add the ssl_certificate and ssl_certificate_key locations.
+
+
+Resources:
+- https://letsencrypt.org/getting-started/
+- https://www.cryptologie.net/article/274/lets-encrypt-overview/
+- Videos: https://www.youtube.com/watch?v=OZyXx8Ie4pA
+- Gitlab with Lets encrypt - http://flo.livezon.com/2016/02/secure-your-gitlab-with-letsencrypt-certificates/
+- Nginx reverse proxy - https://techoverflow.net/blog/2015/12/06/nginx-let-s-encrypt-authentication-for-reverse-proxy-sites/
