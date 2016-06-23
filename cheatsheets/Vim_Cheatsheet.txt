@@ -1,0 +1,72 @@
+                                                               Vim SHORTCUTS CHEATSHEET
+----------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------
+NAVIGATION
+--------------------------------------
+G	        :  Move cursor to the last line of your file.
+1G	        :  Move cursor to the first line of your document. Other numbers will move to the line specified by 
+                   number (ex. 50G goes to the 50th line).
+CTRL U	:  Move cursor up in file 12 lines.
+CTRL D	:  Move cursor down in file 15 lines.
+%	        :  Move cursor to the matching parenthesis, bracket or brace. Great for debugging programs.
+^	        :  Move cursor to the beginning of the line.
+$	        :  Move cursor to the end of the current line.
+w	        :  Move cursor forward to the next word, stopping at punctuation.
+e	        :  Move cursor forward to the end of the word, stopping at punctuation.
+b	        :  Move cursor backwards to the previous word, stopping at punctuation.
+H	        :  Move cursor to the top line of the screen 
+L	        :  Move cursor to the last line on the screen.
+
+--------------------------------------
+EDITING
+--------------------------------------
+x	        :  Delete character(s) to the right of the cursor, starting with the one beneath it.
+d$	        :  Delete (including the current character), to the end of the line.
+dw	        :  Delete a word(s), stops at punctuation.
+dW	        :  Delete a word(s), ignoring punctuation.
+de	        :  Delete to the end of next word.
+dd	        :  Delete a line(s).
+dG	        :  Delete from the current line to the end of the document. CAREFUL
+dH	        :  Delete from the current line to the line shown at the top of the screen.
+R	        :  Replace lines; puts you in INSERT mode but types over the characters that are already on the 
+                   current line.
+p	        :  Paste line(s) you deleted (or yanked) back into the file. This is an excellent command if you want 
+                   to move a few lines somewhere else in your file. Just type 3dd to delete three lines, for example, 
+                   and then move to where you want those lines to be and type p to paste the lines back into your 
+                   file below the cursor.
+
+--------------------------------------
+SEARCH & REPLACE
+--------------------------------------
+f	        :  Find the character corresponding to the next keystroke typed. Move the cursor to the next 
+                   occurrence of that character
+F	        :  Same as f but movement is backwards.
+;	        :  Repeat the last f or F command
+/the    	:  Finds the next occurence of 'the'. This will also find their, them, another, etc.
+?the	        :  Finds the previous occurence of 'the'.
+n	        :  Repeats the last search command. Finds the Next occurence.
+d/the	:  Deletes until the next occurence of the. This is to demonstrate how the delete prefix can be used
+                   with any cursor movement command.
+:g/<oldword>/s//<newword>/gc	:    This will find all occurences of oldword and replace them with  
+                                                             newword. 
+                                                             The optional c at the end of the command tells vi that you would like to 
+                                                             confirm each change. Vi will want you to type in y to make the change  
+                                                             or n to skip that replacement. Great for spelling fixes.
+--------------------------------------
+MISCELLEANOUS
+--------------------------------------
+
+r	        :  Replace the character under the cursor with the next character you type. This can be a very 
+                   useful command. If you wanted to split up a line between two words, you might put the cursor on 
+                   the blank space before the word you would like to go on the next line and type r . This would   
+                   replace the space between the words with a carriage return and put the rest of the line onto a 
+                   new line.
+J	        :  Join lines; the opposite of the line splitting operation above. This will join the current line with the 
+                   next line in your file. Also very useful.
+
+.	        :  The period . command repeats the last text modification command, whatever it may have been 
+                    (insert, deletion, etc).
+:r <file>    :  Read a file into the current file being edited. The file be added gets placed below the current 
+                   cursor position. Please note the colon : before the r in this command.
+
+ 
