@@ -1,5 +1,6 @@
 #Explain how Lets encrypt works
 
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 - Install lets encrypt sudo apt-get install letsencrypt
 - Workflow:
 		lets-encrypt will generate a pair of RSA private key/public key and contact the CA with your public key.
@@ -38,6 +39,7 @@ For each of the domains:
 6. To renew certificates: ./path/to/letsencrypt-auto renew
 
 Resources:
+- https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 - https://letsencrypt.org/getting-started/
 - https://www.cryptologie.net/article/274/lets-encrypt-overview/
 - Videos: https://www.youtube.com/watch?v=OZyXx8Ie4pA
