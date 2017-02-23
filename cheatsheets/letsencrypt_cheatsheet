@@ -35,7 +35,7 @@ For each of the domains:
 3. Then I invoke the letsencrypt command with the webroot plugin, the webroot path and the domain names for the same.
 4. My certificates are then stored.
 5. I change nginx configuration to listen on port 443 and add the ssl_certificate and ssl_certificate_key locations.
-
+6. To renew certificates: ./path/to/letsencrypt-auto renew
 
 Resources:
 - https://letsencrypt.org/getting-started/

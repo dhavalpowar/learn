@@ -1,0 +1,6 @@
+#docker_cheatsheet.txt
+
+MOVING CUSTOM DOCKER IMAGES BETWEEN HOSTS
+1. docker commit: Make an image from a running container
+2. docker save: Save an image to a tar file on the file system
+3. docker load -i: convert(load) a tar file into an image
