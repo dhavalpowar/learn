@@ -12,7 +12,6 @@ public class InsertionSort {
 		for (int i = 1; i < arr.length; i++) {
 			j = i;
 
-			System.out.println(Arrays.toString(arr));
 			// Iterate backwards until 0, to check if current element is in the right place.
 			// If its previous element is greater, swap
 			while (j > 0 && arr[j] < arr[j - 1]) {
