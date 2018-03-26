@@ -10,6 +10,20 @@
     - Node
 
 ## General
+* Javascript uses:
+    - Pass by value for primitives
+    - Call by sharing for mutable objects ie. arrays, objects. It can mutate an object but CANNOT reassign it.
+    - Not pass by reference ie. It does let you assign over the object passed. For eg.
+    ```javascript
+    var obj = { key: 'val' };
+
+    function modify(val) {
+        val = null
+    }
+
+    modify(obj);
+    console.log(obj) // 'obj' is yet { key: 'val' }
+    ```
 * The `for...of` statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property. While `for...in` iterates over property names, `for...of` iterates over property values
     ``` javascript
     var arr = [3, 5, 7];
@@ -23,6 +37,31 @@
     console.log(i); // logs 3, 5, 7
     }
     ```
+* `Object.freeze(o)` - Does neither allow to add new properties or modify existing properties.
+* `Object.seal(o)` - Does not allow you to add new properties BUT allows modifying existing properties.
+* `Object.defineProperty()` - Use this to add new properties to an object with configurations such as writable(read-onlyness)
+* Callback functions
+    - sdfsdf
+* `'use strict';` <TO_BE_COMPLETED>
+    - Strict mode applies to entire scripts or to individual functions. It doesn't apply to block statements enclosed in {} brace
+    - Strict mode changes both syntax and runtime behavior. Changes generally fall into these categories.
+    - *Converting mistakes into errors*
+        + prevents automatic `this` coercien
+        + makes it safer to use `eval`
+        + makes it impossible to accidentally create global variables
+        + makes attempts to delete undeletable properties throw for eg. `delete Object.prototype`
+        + requires that all properties named in an object literal be unique. This is no longer the case in ECMAScript 2015
+        + requires that function parameter names be unique. In normal code the last duplicated argument hides previous identically-named arguments.
+        + a strict mode in ECMAScript 5 forbids octal syntax
+        + strict mode in ECMAScript 2015 forbids setting properties on primitive values.
+* Types of garbage collections
+    - Reference counting algorithm (Found in IE 6 and 7)
+        + This algorithm reduces the definition of "an object is not needed anymore" to "an object has no other object referencing to it". An object is considered garbage collectible if there is zero reference pointing at this object
+        + Cycles are an issue here since cycles have references to each other.
+    - Mark and sweep garbage.
+        + This algorithm reduces the definition of "an object is not needed anymore" to "an object is unreachable".
+        + This algorithm assumes the knowledge of a set of objects called roots (In JavaScript, the root is the global object). Periodically, the garbage-collector will start from these roots, find all objects that are referenced from these roots, then all objects referenced from these, etc. Starting from the roots, the garbage collector will thus find all reachable objects and collect all non-reachable objects.
+* [Memory leak patterns in Javascript](https://www.ibm.com/developerworks/web/library/wa-memleak/wa-memleak-pdf.pdf)
 
 ## Objects
 * Literal vs constructor way of creating it.
@@ -284,14 +323,14 @@
     * You can use the `delete` operator to delete variables declared implicitly but not those declared with the `var` statement.
     * When you delete an array element, **the array length is not affected**.
 - `typeof`
-    * All constructor functions while instantiated with 'new' keyword will always be typeof 'object' for eg. `new String('sdf')`
+    * All constructor functions while instantiated with `new` keyword will always be typeof `object` for eg. `new String('sdf')`
     * But there is a exception in case of Function constructor of Javascript
         ```javascript
         var func = new Function();
 
         typeof func; // It will return 'function'
         ```
-    * `class` and `function` have typeof === 'function`
+    * `class` and `function` have `typeof === 'function'`
 
 ## [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
     

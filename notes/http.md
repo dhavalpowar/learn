@@ -23,13 +23,16 @@
 	* `GET` - Transfer a current representation of the target resource.
 	* `HEAD` - Same as GET, but only transfer the status line and header section.
 	* `POST`
-	* `PUT`
+	* `PUT` - update/replace every resource in the entire collection.
 	* `DELETE`
 	* `TRACE`
 	* `CONNECT`
 * Status codes (summary of families)
 	-  `1xx`  (Informational): Request received, continuing process.
 	-   `2xx`  (Successful): The action was successfully received, understood, and accepted.
+		+ 201 Created
+		+ 202 Accepted
+		+ 203 
 	-   `3xx`  (Redirection): Further action needs to be taken in order to complete the request.
 	-   `4xx`  (Client Error): The request contains bad syntax or cannot be fulfilled.
 	-   `5xx`  (Server Error): The server failed to fulfil an apparently valid request.
@@ -49,3 +52,5 @@
 	* Code files - HTML, CSS, JS
 	* Assets - Images, Music, Video etc
 * CDN for deliverying Assets and code files
+
+## [REST APIs](http://www.restapitutorial.com/httpstatuscodes.html)

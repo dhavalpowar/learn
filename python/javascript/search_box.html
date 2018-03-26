@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search box Demo</title>
+    <style>
+        .container {
+            width: 300px;
+        }
+        .search-box {
+            display: block;
+            width: 100%;
+        }
+        .result {
+            display: none;
+            width: 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="search-box" placeholder="Search for an animal">
+        <div class="result"></div>
+    </div>
+
+    <script>
+        (function(window) {
+            let inp = document.querySelector('input.search-box');
+            let div = document.querySelector('div.result');
+            let results = ['cat', 'dog', 'cheetah', 'lion', 'tiger', 'peacock', 'crocodile'];
+            let currResults = [];
+            function debounce(cb, waitTime) {
+                let timeout;
+                return function(e) {
+                    clearTimeout(timeout);
+                    let that = this;
+                    timeout = setTimeout(
+                        () => cb.apply(that, [e]),
+                        waitTime
+                    );
+                }
+            }
+
+            function showProgress(e) {
+                if (!e.target.value) {
+                    div.style.display = 'none';
+                }
+                else {
+                    // Remove old results
+                    let toRemove = div.getElementsByTagName('ul');
+                    if (toRemove.length > 0) {
+                        div.removeChild(toRemove[0]);
+                    }
+                    
+                    // Get new results
+                    currResults = results.slice(0,
+                        Math.floor(Math.random() * results.length)
+                    );
+                    
+                    // Show new results
+                    if (currResults.length > 0) {
+                        let list = document.createElement('ul');
+                        list.style['list-style-type'] = 'none';
+                        for(let i = 0; i < currResults.length; i++) {
+                            let newLi = document.createElement('li');
+                            newLi.textContent = currResults[i];
+                            list.appendChild(newLi);
+                        }
+                        div.style.display = 'block';
+                        div.appendChild(list); 
+                    } else {
+                    div.style.display = 'none';
+                    }
+                }
+            }
+            inp.addEventListener('keyup', debounce(showProgress, 700));
+            inp.addEventListener('blur', function(e) {
+                div.style.display = 'none';
+            });
+            inp.addEventListener('focus', function(e) {
+                if (currResults.length > 0) {
+                    div.style.display = 'block';
+                }
+            });
+        })(window);
+    </script>
+    
+</body>
+</html>

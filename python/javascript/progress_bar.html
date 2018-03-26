@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    .progress {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    background-color: #ddd;
+    }
+
+    .bar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    }
+    </style>
+    <body>
+
+        <h1>JavaScript Progress Bar</h1>
+
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+
+        <br>
+        <button>Click Me</button> 
+
+        <script>
+            var divs = document.querySelectorAll('div.bar');
+            var timeout;
+            var width = 0;
+
+            function incrementProgress(i) {
+                elem = divs[i];
+                timeout = setTimeout(function() {
+                    if(width >= 100) {
+                        console.log(i)
+                        clearTimeout(timeout)
+                        width = 0;
+                        i += 1
+                        if (i < divs.length) {
+                            incrementProgress(i)
+                        }
+                    } else {
+                        width += 1;
+                        elem.style.width = width + '%';
+                        incrementProgress(i);
+                    }
+                }, 10);
+            }
+
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function(e) {
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.width = '0%';
+                }
+                incrementProgress(0);
+            });
+        </script>
+
+    </body>
+</html>
