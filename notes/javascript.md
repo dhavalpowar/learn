@@ -602,6 +602,10 @@
         display.call();  // sData value is Wisen 
         ```
 
+## Promises
+
+## Observables
+* 
 
 ## [ES6 in Depth](https://hacks.mozilla.org/category/es6-in-depth/)
 * Arrow functions
@@ -644,3 +648,7 @@
         };
         ```
 
+## Resources
+* [Front-end interview handbook](https://github.com/yangshun/front-end-interview-handbook)
+* [JS trends 2018](https://medium.com/javascript-scene/top-javascript-libraries-tech-to-learn-in-2018-c38028e028e6)
+* [Javascript conceptually](https://medium.com/@_ericelliott)
